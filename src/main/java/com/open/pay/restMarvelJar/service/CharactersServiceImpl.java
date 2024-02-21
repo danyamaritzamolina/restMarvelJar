@@ -46,7 +46,7 @@ public class CharactersServiceImpl implements CharactersService{
         String result = "";
         
         String url = generateUrl(System.currentTimeMillis(),null);
-
+        System.out.print("URL: "+url);
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
             .uri(URI.create(url))

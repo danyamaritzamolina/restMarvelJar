@@ -53,24 +53,10 @@
                         <plugin>
                             <groupId>org.apache.maven.plugins</groupId>
                             <artifactId>maven-surefire-plugin</artifactId>
-                            <version>3.1.2</version> <!-- Asegúrate de tener la versión correcta -->
+                            <version>3.1.2</version> 
                             <configuration>
-                                <!-- Opcional: Configuraciones adicionales si es necesario -->
                             </configuration>
                         </plugin>
-                        <!--plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-jar-plugin</artifactId>
-                            <configuration>
-                                <archive>
-                                    <manifest>
-                                        <addClasspath>true</addClasspath>
-                                        <mainClass>com.open.pay.restMarvelJar.RestMarvelJarApplication</mainClass>
-                                    </manifest>
-                                </archive>
-                                <finalName>RestMarvelJar</finalName>
-                            </configuration>
-                        </plugin-->
 		</plugins>
 	</build>
 
