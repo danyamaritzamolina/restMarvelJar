@@ -11,6 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
 
+
+/**
+ * Test para los metodos creados de consulta de apis GET BY ID Y GET ALL
+ * @author danya
+ */
 @SpringBootTest
 class RestMarvelJarApplicationTests {
     // Definición de la clase service para prueba de peticiones a la API

@@ -5,7 +5,7 @@
 package com.open.pay.restMarvelJar.controller;
 
 /**
- *
+ * Controller para endpoint de consulta de información de api externa
  * @author danya
  */
 import com.open.pay.restMarvelJar.service.CharactersService;
