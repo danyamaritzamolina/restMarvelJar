@@ -11,8 +11,10 @@ package com.open.pay.restMarvelJar.controller;
 import com.open.pay.restMarvelJar.service.CharactersService;
 import java.io.IOException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +22,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
+@Component
+@ComponentScan
 public class CharactersController {
     private final static String JSON_RESPONSE = "application/json";
     private final CharactersService charactersService;
@@ -35,10 +39,10 @@ public class CharactersController {
      * @throws IOException
      * @throws InterruptedException 
      */
-    @GetMapping(value = "/getAll", produces = JSON_RESPONSE)
-    public ResponseEntity<String> getAll() throws IOException, InterruptedException {
+    @GetMapping(value = "/getAll/{ts}", produces = JSON_RESPONSE)
+    public ResponseEntity<String> getAll(@PathVariable long ts) throws IOException, InterruptedException {
         ResponseEntity result;
-        result = charactersService.getAllService();
+        result = charactersService.getAllService(ts);
 
         return result;
     }
@@ -51,11 +55,11 @@ public class CharactersController {
      * @throws IOException
      * @throws InterruptedException 
      */
-    @GetMapping(value = "/getById/{characterId}", produces = JSON_RESPONSE)
-    public ResponseEntity<String> getById(@PathVariable String characterId) throws IOException, InterruptedException {
+    @GetMapping(value = "/getById/{characterId}/{ts}", produces = JSON_RESPONSE)
+    public ResponseEntity<String> getById(@PathVariable String characterId, @PathVariable long ts) throws IOException, InterruptedException {
         ResponseEntity result;
         
-        result = charactersService.getByIdService(characterId);
+        result = charactersService.getByIdService(characterId, ts);
 
         return result;
     }

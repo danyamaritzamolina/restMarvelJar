@@ -22,14 +22,14 @@ public interface CharactersService {
      * @return 
      */
     
-    public ResponseEntity<String> getAllService() throws IOException, InterruptedException;
+    public ResponseEntity<String> getAllService(long ts) throws IOException, InterruptedException;
     
     /**
      * Metodo para consultar charcateres por id
      * @param characterId
      * @return
      */
-    public ResponseEntity<String> getByIdService(String characterId)  throws IOException, InterruptedException;
+    public ResponseEntity<String> getByIdService(String characterId, long ts)  throws IOException, InterruptedException;
     
     
 }

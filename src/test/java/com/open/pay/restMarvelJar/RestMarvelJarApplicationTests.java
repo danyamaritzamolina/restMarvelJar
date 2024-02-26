@@ -16,7 +16,7 @@ class RestMarvelJarApplicationTests {
     // Definición de la clase service para prueba de peticiones a la API
     @Autowired
     CharactersService charactersService = new CharactersServiceImpl();
-   
+    long ts = 1;
     @Test
     void contextLoads() {
     }
@@ -38,9 +38,10 @@ class RestMarvelJarApplicationTests {
     @Test
     public void TestGetAll() throws IOException, InterruptedException{
         ResponseEntity resultado = null;
+        
         try {
             
-            resultado = charactersService.getAllService();
+            resultado = charactersService.getAllService(ts);
             System.out.print("URL: "+resultado);
             
         } catch (InterruptedException ex) {
@@ -61,7 +62,7 @@ class RestMarvelJarApplicationTests {
         ResponseEntity resultado = null;
         String characterId = "1017100";
         try {
-            resultado = charactersService.getByIdService(characterId);
+            resultado = charactersService.getByIdService(characterId,ts);
             System.out.println("RESULTADO: "+resultado.getBody());
         } catch (InterruptedException ex) {
             Logger.getLogger(RestMarvelJarApplicationTests.class.getName()).log(Level.SEVERE, null, ex);
@@ -80,7 +81,7 @@ class RestMarvelJarApplicationTests {
         ResponseEntity resultado = null;
         String characterId = "1011334";
         try {
-            resultado = charactersService.getByIdService(characterId);
+            resultado = charactersService.getByIdService(characterId, ts);
         } catch (InterruptedException ex) {
             Logger.getLogger(RestMarvelJarApplicationTests.class.getName()).log(Level.SEVERE, null, ex);
             ex.printStackTrace();

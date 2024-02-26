@@ -42,7 +42,7 @@ public class CharactersServiceImpl implements CharactersService{
      * @throws InterruptedException 
      */
     @Override
-    public ResponseEntity<String> getAllService() throws IOException, InterruptedException {
+    public ResponseEntity<String> getAllService(long ts) throws IOException, InterruptedException {
         String result = "";
         
         String url = generateUrl(System.currentTimeMillis(),null);
@@ -68,9 +68,9 @@ public class CharactersServiceImpl implements CharactersService{
      * @throws InterruptedException 
      */
     @Override
-    public ResponseEntity<String> getByIdService(String characterId) throws IOException, InterruptedException {
+    public ResponseEntity<String> getByIdService(String characterId, long ts) throws IOException, InterruptedException {
         String result = "";
-        String url = generateUrl(System.currentTimeMillis(), characterId);
+        String url = generateUrl(ts, characterId);
         System.out.print("URL: "+url);
 
         HttpClient client = HttpClient.newHttpClient();
